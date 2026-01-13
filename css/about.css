@@ -1,0 +1,96 @@
+/* Focused About page styles to improve layout and typography without touching global CSS */
+:root{
+  --primary:#111827;
+  --accent:#C9A96E;
+  --surface:#f5f5f7;
+  --muted:#6b7280;
+  --bg:#ffffff;
+}
+
+/* Container utility used across the page */
+.container-custom{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1rem;
+}
+
+/* Section spacing consistent rhythm */
+.section-spacing{
+  padding:3.5rem 0;
+}
+@media(min-width:768px){
+  .section-spacing{ padding:4.5rem 0; }
+}
+
+/* Headline and CTA fonts */
+.font-headline{ font-family:'Playfair Display', serif; }
+.font-cta{ font-family:'Montserrat', system-ui, sans-serif; letter-spacing:0.04em; }
+
+/* Color helpers */
+.text-primary{ color:var(--primary) !important; }
+.text-accent{ color:var(--accent) !important; }
+.bg-background{ background:var(--bg) !important; }
+.bg-secondary{ background:#fbfbfd !important; }
+.bg-accent{ background:var(--accent) !important; }
+
+/* Cards */
+.card-elevated{
+  background: #fff;
+  border-radius:14px;
+  box-shadow:0 8px 30px rgba(17,24,39,0.06);
+  overflow:hidden;
+}
+.card-elevated-hover{ transition:transform .4s cubic-bezier(.2,.9,.2,1), box-shadow .35s; }
+.card-elevated-hover:hover{ transform:translateY(-6px); box-shadow:0 18px 40px rgba(17,24,39,0.08); }
+
+/* Buttons */
+.btn-primary{ background:var(--accent); color:#111; padding:.6rem 1rem; border-radius:999px; display:inline-flex; align-items:center; gap:.5rem; font-weight:600; }
+.btn-secondary{ background:#111; color:#fff; padding:.7rem 1.25rem; border-radius:10px; }
+
+/* Founder image sizing and harmony */
+.aspect-\[4\/5\], .aspect-\[4\\/5\] { aspect-ratio:4/5; }
+.aspect-square{ aspect-ratio:1/1; }
+
+/* Make founder area and other two-column sections align better on small screens */
+@media(max-width:1024px){
+  .grid{ gap:1.25rem !important; }
+}
+
+/* Improve typography for main headings and paragraphs */
+h1, h2, h3{ color:var(--primary); }
+h1{ line-height:1.02; }
+
+.text-text-secondary{ color:var(--muted) !important; }
+
+/* Blockquote styling */
+blockquote{
+  border-left:4px solid var(--accent);
+  padding:1rem 1.25rem;
+  background:rgba(201,169,110,0.04);
+  border-radius:6px;
+}
+blockquote p{ margin:0; color:var(--primary); }
+blockquote footer{ color:var(--muted); font-size:.925rem; }
+
+/* Founder highlights grid spacing */
+@media(min-width:1024px){
+  .section-spacing .grid-cols-2 > :first-child{ padding-right:1rem; }
+}
+
+/* Improve list and small text readability */
+.text-sm{ font-size:.95rem; }
+
+/* Small accessibility improvements for links and hover states */
+a{ transition:color .2s ease; }
+a:hover{ color:var(--accent); }
+
+/* Ensure large hero text remains readable on narrow screens */
+@media(max-width:420px){
+  .text-5xl{ font-size:2rem !important; }
+}
+
+/* Minor tidy-up for footer links when this stylesheet is loaded */
+footer a{ color:inherit; }
+
+/* Utility to ensure fixed header doesn't overlap content on very small screens */
+body{ scroll-padding-top:72px; }
